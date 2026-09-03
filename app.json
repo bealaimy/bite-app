@@ -9,6 +9,7 @@
     "plugins": ["expo-router", "expo-secure-store"],
     "android": { "package": "com.bite.together" },
     "ios": { "bundleIdentifier": "com.bite.together" },
+    "experiments": { "baseUrl": "/bite-app" },
     "extra": { "router": {} }
   }
 }
