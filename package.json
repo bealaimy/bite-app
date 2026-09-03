@@ -1,0 +1,36 @@
+{
+  "name": "bite-together",
+  "version": "1.0.0",
+  "private": true,
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "build:web": "expo export --platform web",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^14.1.0",
+    "@react-native-picker/picker": "^2.11.0",
+    "@supabase/supabase-js": "^2.49.4",
+    "expo": "^53.0.0",
+    "expo-audio": "^0.4.0",
+    "expo-file-system": "^18.1.0",
+    "expo-image-picker": "^16.1.4",
+    "expo-router": "^5.0.0",
+    "expo-secure-store": "^14.2.3",
+    "expo-status-bar": "~2.2.3",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-native": "0.79.2",
+    "react-native-get-random-values": "~1.11.0",
+    "react-native-url-polyfill": "^2.0.0",
+    "react-native-web": "0.20.0"
+  },
+  "devDependencies": {
+    "@types/react": "~19.0.10",
+    "typescript": "~5.8.3"
+  }
+}

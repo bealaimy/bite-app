@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "Bite",
+    "slug": "bite-together",
+    "version": "1.0.0",
+    "scheme": "bite",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "plugins": ["expo-router", "expo-secure-store"],
+    "android": { "package": "com.bite.together" },
+    "ios": { "bundleIdentifier": "com.bite.together" },
+    "extra": { "router": {} }
+  }
+}
