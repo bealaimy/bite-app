@@ -13,11 +13,11 @@ An Expo web/mobile restaurant-decider for groups: sign in with a passwordless em
 1. Run `npm install`, copy `.env.example` to `.env`, and add the Supabase project URL and publishable key.
 2. In the Supabase SQL Editor run `supabase/migrations/0001_family_ledger.sql`, then `supabase/migrations/0002_bite.sql`. The first migration is legacy scaffolding; the second creates Bite's data model and policies.
 3. In Supabase Auth, configure email sign-in and add `bite://` plus your web deployment URL to redirect URLs. Set a production SMTP provider before launch so sign-in emails are reliable.
-4. Deploy the search proxy: `supabase functions deploy places-search`, then set `GOOGLE_MAPS_API_KEY` as an Edge Function secret. Restrict that key to Places API and your intended server environment.
+4. In Google Cloud, enable **Places API** and **Geocoding API**, then create a restricted API key. Deploy the search proxy: `supabase functions deploy places-search`, then set `GOOGLE_MAPS_API_KEY` as an Edge Function secret. Restrict the key to those APIs; never add it to the web app or GitHub repository.
 5. Run `npm run web` for the web app, or `npm start` for Expo.
 
 ## Current product scope
 
-The interface contains the complete v1 path and demo restaurant cards so it can be tested without credentials. Once the Places function is connected, replace the `demo` list in `app/index.tsx` with `supabase.functions.invoke('places-search', ...)` using a host-selected geocoded location.
+The interface has a credential-free demo mode. In a real signed-in room, the swipe screen calls the server-only `places-search` function using the host-selected area and radius.
 
 The database schema already protects room membership and only accepts each person's own swipe. Before public launch, add server-side final-result calculation (unanimous/majority), host save-visit action, review moderation, rate limiting, and abuse reporting.
